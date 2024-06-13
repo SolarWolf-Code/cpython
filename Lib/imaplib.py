@@ -1350,7 +1350,7 @@ class IMAP4_stream(IMAP4):
         self.process = subprocess.Popen(self.command,
             bufsize=DEFAULT_BUFFER_SIZE,
             stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-            shell=True, close_fds=True)
+            shell=False, close_fds=True)
         self.writefile = self.process.stdin
         self.readfile = self.process.stdout
 

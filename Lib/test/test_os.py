@@ -266,7 +266,7 @@ class FileTests(unittest.TestCase):
             # use a new console to not flood the test output
             creationflags=subprocess.CREATE_NEW_CONSOLE,
             # use a shell to hide the console window (SW_HIDE)
-            shell=True)
+            shell=False)
         self.assertEqual(retcode, 0)
 
     @unittest.skipUnless(sys.platform == 'win32',

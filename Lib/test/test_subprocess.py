@@ -1715,7 +1715,7 @@ class RunFuncTestCase(BaseTestCase):
         res = subprocess.run(path, stdout=subprocess.DEVNULL)
         self.assertEqual(res.returncode, 0)
         with self.assertRaises(TypeError):
-            subprocess.run(path, stdout=subprocess.DEVNULL, shell=True)
+            subprocess.run(path, stdout=subprocess.DEVNULL, shell=False)
 
     def test_run_with_bytes_path_and_arguments(self):
         # bpo-31961: test run([bytes_object, b'additional arguments'])
@@ -2752,7 +2752,7 @@ class POSIXProcessTestCase(BaseTestCase):
 
         # absolute bytes path as a string
         cmd = b"'%s' %s" % (abs_program, " ".join(args).encode("utf-8"))
-        exitcode = subprocess.call(cmd, shell=True)
+        exitcode = subprocess.call(cmd, shell=False)
         self.assertEqual(exitcode, 0)
 
         # bytes program, unicode PATH

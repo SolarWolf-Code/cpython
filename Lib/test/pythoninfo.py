@@ -932,8 +932,7 @@ def collect_windows(info_add):
 
     # windows.ver: "ver" command
     try:
-        proc = subprocess.Popen(["ver"], shell=True,
-                                stdout=subprocess.PIPE,
+        proc = subprocess.Popen(["ver"], shell=False, stdout=subprocess.PIPE,
                                 stderr=subprocess.PIPE,
                                 text=True)
         output = proc.communicate()[0]
