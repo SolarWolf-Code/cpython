@@ -1684,7 +1684,7 @@ def plain(text):
 def pipepager(text, cmd):
     """Page through text by feeding it to another program."""
     import subprocess
-    proc = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE,
+    proc = subprocess.Popen(cmd, shell=False, stdin=subprocess.PIPE,
                             errors='backslashreplace')
     try:
         with proc.stdin as pipe:
