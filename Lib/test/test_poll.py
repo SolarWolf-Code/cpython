@@ -127,7 +127,7 @@ class PollTests(unittest.TestCase):
     @requires_resource('walltime')
     def test_poll2(self):
         cmd = 'for i in 0 1 2 3 4 5 6 7 8 9; do echo testing...; sleep 1; done'
-        proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE,
+        proc = subprocess.Popen(cmd, shell=False, stdout=subprocess.PIPE,
                                 bufsize=0)
         self.enterContext(proc)
         p = proc.stdout

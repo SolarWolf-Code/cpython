@@ -288,7 +288,7 @@ def _syscmd_ver(system='', release='', version='',
                                            stderr=subprocess.DEVNULL,
                                            text=True,
                                            encoding="locale",
-                                           shell=True)
+                                           shell=False)
         except (OSError, subprocess.CalledProcessError) as why:
             #print('Command %s failed: %s' % (cmd, why))
             continue
