@@ -993,13 +993,13 @@ if sys.platform != 'vxworks':
         import subprocess
         if mode == "r":
             proc = subprocess.Popen(cmd,
-                                    shell=True, text=True,
+                                    shell=False, text=True,
                                     stdout=subprocess.PIPE,
                                     bufsize=buffering)
             return _wrap_close(proc.stdout, proc)
         else:
             proc = subprocess.Popen(cmd,
-                                    shell=True, text=True,
+                                    shell=False, text=True,
                                     stdin=subprocess.PIPE,
                                     bufsize=buffering)
             return _wrap_close(proc.stdin, proc)
